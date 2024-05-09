@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
  title: 'SEO Title for Work Page',
- description: ['Work Page', 'Adrian Martin', 'Description', 'Frontend Developer'],
+ description: 'Work Page',
+ keywords: ['Work Page', 'Adrian Martin', 'Description', 'Frontend Developer'],
 };
 
 export default function WorkPage() {
