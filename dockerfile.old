@@ -1,0 +1,16 @@
+# imagen base
+FROM node:18-alpine
+# se trabaja en este directorio dentro del contenedor
+WORKDIR /app
+# se copia el package.json a la imagen
+COPY package.json /
+# se instalan las dependencias
+RUN npm install
+# se copian los archivos del proyecto a la imagen
+COPY . /
+# se compila el proyecto para produccion
+RUN npm run build
+# se expone el puerto 3000 para que se pueda acceder a la aplicacion desde fuera del contenedor
+EXPOSE 3000
+# se ejecuta el comando para iniciar la aplicacion   
+CMD [ "npm", "start" ]
